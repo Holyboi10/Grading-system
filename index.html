@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+    <label for="name" >NAME :</label>
+    <input type="text" autocomplete="off" name="text" class="input" placeholder="Enter your Name" id="name"><br>
+    <label for="name" >MATHEMATICS :</label>
+    <input type="text" autocomplete="off" name="text" class="input" placeholder="Enter your Score" id="valuea"> <br>
+    <label for="name" >ENGLISH : </label>
+    <input type="text" autocomplete="off" name="text" class="input" placeholder="Enter your Score" id="valueb"> <br>
+    <label for="name" >PHYSICS : </label>
+    <input type="text" autocomplete="off" name="text" class="input" placeholder="Enter your Score" id="valuec"> <br>
+    <label for="name" >CHEMISTRY :</label>
+    <input type="text" autocomplete="off" name="text" class="input" placeholder="Enter your Score" id="valued"> <br> <br>
+    <button onclick="grade()"> Grade</button> <br>
+    <h1 style="color: green;" id="text"></h1>  <br>
+        <p id="rating"></p>
+  
+
+    </div>
+    
+
+
+
+
+
+    <script>
+        function grade(){
+            var username = document.getElementById('name').value
+            var a = Number(document.getElementById('valuea').value) 
+            var b = Number(document.getElementById('valueb').value)
+            var c = Number(document.getElementById('valuec').value)
+            var d = Number( document.getElementById('valued').value)
+            var all = a+b+c+d
+            var grading = all/4
+            document.getElementById("text").innerHTML=`Congratulations  your grade is ${grading} %`
+            if (grading <= 35) {
+                document.getElementById('rating').innerHTML = `Hello ${username}, this is a very poor result.Sit up!`   
+            }
+            if (grading >= 35) {
+                 document.getElementById('rating').innerHTML = `Hello ${username}, this is an average result  you can do better!`
+            }
+            if (grading >= 59) {
+                document.getElementById('rating').innerHTML = `Hello ${username}, this is a good  result.keep pushing!`   
+            }
+            if (grading >= 80) {
+                document.getElementById('rating').innerHTML = `Hello ${username}, this is an Excellent  result. keep it up!`   
+            }
+            
+        }
+
+    </script>
+    
+</body>
+</html>
